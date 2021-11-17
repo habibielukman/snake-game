@@ -43,8 +43,8 @@ void runGame2(){
 	int colorB=1;
 	while(1) {
 		color(14);
-		printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___\n");
-		printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __|\n");
+		printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___  Your place is the character []\n");
+		printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __| The Apple is the yellow\n");
 		printl("\\__  \\  | | | |  / /_\\ \\  |  _  | | __|    |  --|  / /_\\ \\   /  / \\ /  \\  \\  | __|\n");
 		printl("/____/  |_| |_| /_/   \\_\\ |_| \\_\\ |___|     \\___| /_/   \\_\\ |__|  |_|   |__| |___| Habibie Lukmanul Hakim\n");
 		printl("POINT " << point << endl);
@@ -75,7 +75,7 @@ void runGame2(){
 			for(int j=0;j<10;j++){
 				if(i==y && j==x){
 					color(75);
-					printl ("<>");
+					printl ("[]");
 				}else if(i==ty && j==tx){
 					color(6);
 					printl (block << block);
@@ -161,15 +161,38 @@ void runGame(){
 	color(1);
 	int colorB=1;
 	string password="";
+	char ch;
+	string upass="";
+	ch=getch();
+	string keyIn="Up";
 	printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___\n");
 	printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __|\n");
 	printl("\\__  \\  | | | |  / /_\\ \\  |  _  | | __|    |  --|  / /_\\ \\   /  / \\ /  \\  \\  | __|\n");
 	printl("/____/  |_| |_| /_/   \\_\\ |_| \\_\\ |___|     \\___| /_/   \\_\\ |__|  |_|   |__| |___| Habibie Lukmanul Hakim\n");
-	printl("Choose Speed: [ C ]\n Continue to game [ G ]\n____________________________\nANSWER: ");
-	char ch;
-	string upass="";
-	ch=getch();
-	if(ch=='c'){
+	printl("-> Choose Speed <-\n");
+	printl("    Continue\n");
+	while((ch=getch())!='\r'){
+		system("cls");
+		if(ch==KEY_UP){
+			keyIn="Up";
+		}else if(ch==KEY_DOWN){
+			keyIn="Down";
+		}
+		printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___\n");
+		printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __|\n");
+		printl("\\__  \\  | | | |  / /_\\ \\  |  _  | | __|    |  --|  / /_\\ \\   /  / \\ /  \\  \\  | __|\n");
+		printl("/____/  |_| |_| /_/   \\_\\ |_| \\_\\ |___|     \\___| /_/   \\_\\ |__|  |_|   |__| |___| Habibie Lukmanul Hakim\n");
+		if(keyIn=="Up"){
+			printl("-> Choose Speed <-\n");
+			printl("    Continue\n");
+		}else{
+			printl("   Choose Speed\n");
+			printl("->  Continue    <-\n");
+		}
+
+	}
+	system("cls");
+	if(keyIn=="Up"){
 		float speed;
 		cout << "Enter Speed [ In decimal ]: ";
 		cin >> speed;
@@ -185,8 +208,8 @@ void runGame(){
 	}
 	while(1) {
 		color(14);
-		printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___\n");
-	printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __|\n");
+		printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___  Your place is the character []\n");
+	printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __| The Apple is the yellow\n");
 	printl("\\__  \\  | | | |  / /_\\ \\  |  _  | | __|    |  --|  / /_\\ \\   /  / \\ /  \\  \\  | __|\n");
 	printl("/____/  |_| |_| /_/   \\_\\ |_| \\_\\ |___|     \\___| /_/   \\_\\ |__|  |_|   |__| |___| Habibie Lukmanul Hakim\n");
 		printl("POINT " << point << endl);
@@ -217,7 +240,7 @@ void runGame(){
 			for(int j=0;j<10;j++){
 				if(i==y && j==x){
 					color(75);
-					printl ("<>");
+					printl ("[]");
 				}else if(i==ty && j==tx){
 					color(6);
 					printl (block << block);
