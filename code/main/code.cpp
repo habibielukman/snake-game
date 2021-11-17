@@ -134,21 +134,37 @@ void runGame2(){
 	color(4);
 	system("cls");
 	bestPoint=max(bestPoint,point);
+	char cget;
+	string k2="Up";
 	cout   << "     POINT:"<< point <<"         "   << endl;
 	cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
-	cout   << "       You lose      "   << endl;
-	cout   << " [ R ] for retry     "   << endl;
-	cout   << " [ Alt ] + [ F4 ] or [ F4 ]\n";
-	char cget=getch();
-	if(cget=='r'){
-		runGame2();
-	}
-	while(cget!='r'){
-		cget=getch();
-		if(cget=='r'){
-			runGame2();
-			break;
+	printl("-> Retry <-\n");
+	printl("   Quit\n");
+	cget=getch();
+	while((cget=getch())!='\r'){
+		system("cls");
+		if(cget==KEY_UP){
+			k2="Up";
+		}else if(cget==KEY_DOWN){
+			k2="Down";
 		}
+		if(k2=="Up"){
+			cout   << "     POINT:"<< point <<"         "   << endl;
+			cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
+			printl("-> Retry <-\n");
+			printl("   Quit\n");
+		}else{
+			cout   << "     POINT:"<< point <<"         "   << endl;
+			cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
+			printl("   Retry\n");
+			printl("-> Quit  <-\n");
+		}
+
+	}
+	if(k2=="Up"){
+		runGame2();
+	}else{
+		return;
 	}
 }
 void runGame(){
@@ -163,7 +179,6 @@ void runGame(){
 	string password="";
 	char ch;
 	string upass="";
-	ch=getch();
 	string keyIn="Up";
 	printl(" _____   _____     ___     _   _   ___       ___     ___       ____  ____     ___\n");
 	printl("/ __ /  |  _  |   / _ \\   | |_/ / | __|     /       / _ \\     /  _ \\/__  \\   | __|\n");
@@ -171,6 +186,7 @@ void runGame(){
 	printl("/____/  |_| |_| /_/   \\_\\ |_| \\_\\ |___|     \\___| /_/   \\_\\ |__|  |_|   |__| |___| Habibie Lukmanul Hakim\n");
 	printl("-> Choose Speed <-\n");
 	printl("    Continue\n");
+	ch=getch();
 	while((ch=getch())!='\r'){
 		system("cls");
 		if(ch==KEY_UP){
@@ -299,21 +315,37 @@ void runGame(){
 	color(4);
 	system("cls");
 	bestPoint=max(bestPoint,point);
+	char cget;
+	string k2="Up";
 	cout   << "     POINT:"<< point <<"         "   << endl;
 	cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
-	cout   << "       You lose      "   << endl;
-	cout   << " [ R ] for retry     "   << endl;
-	cout   << " [ Alt ] + [ F4 ] or [ F4 ]\n";
-	char cget=getch();
-	if(cget=='r'){
-		runGame2();
-	}
-	while(cget!='r'){
-		char cc=getch();
-		if(cc=='r'){
-			runGame2();
-			break;
+	printl("-> Retry <-\n");
+	printl("   Quit\n");
+	cget=getch();
+	while((cget=getch())!='\r'){
+		system("cls");
+		if(cget==KEY_UP){
+			k2="Up";
+		}else if(cget==KEY_DOWN){
+			k2="Down";
 		}
+		if(k2=="Up"){
+			cout   << "     POINT:"<< point <<"         "   << endl;
+			cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
+			printl("-> Retry <-\n");
+			printl("   Quit\n");
+		}else{
+			cout   << "     POINT:"<< point <<"         "   << endl;
+			cout   << "BEST POINT:"<< bestPoint << "         "   << endl;
+			printl("   Retry\n");
+			printl("-> Quit  <-\n");
+		}
+
+	}
+	if(k2=="Up"){
+		runGame2();
+	}else{
+		return;
 	}
 	Sleep(num*100);
 	getch();
