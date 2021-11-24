@@ -7,7 +7,7 @@
 # Snake Game
 Snake Game builded with c++ console and without graphics librarys
 
-[Download Game](game.exe)
+[Game download](game.exe)
 
 
 
